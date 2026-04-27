@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSING OUTER SMART</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0f2027;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* SLIDE 1 / MAIN PAGE BACKGROUND */
+        #mainPage {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            /* GANTI NAMA FILE BACKGROUND DI SINI */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('BANYUWANGI.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .keterangan {
+            max-width: 800px;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* NAVIGASI BUTTONS */
+        .nav-main {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-main {
+            padding: 15px 35px;
+            border: 2px solid #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .btn-main:hover {
+            background: #ffd700;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* SECTIONS */
+        .content-section {
+            display: none;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0f2027, #203a43);
+            min-height: 100vh;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .section-title {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        /* GRID SYSTEM */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* GLASSMORPHISM CARD */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ffd700;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #222;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: #ffd700;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #e0e0e0;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 50px auto;
+            background: none;
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover { background: #ffd700; color: #000; }
+
+    </style>
+</head>
+<body>
+
+    <header id="mainPage">
+        <h1>OSING OUTER SMART</h1>
+        <p class="keterangan">Selamat datang di platform informasi digital masa depan Banyuwangi. Kami menghadirkan transformasi digital untuk meningkatkan kesadaran budaya dan pariwisata lokal berbasis teknologi terkini.</p>
+        <div class="nav-main">
+            <button class="btn-main" onclick="showSection('destinasi')">DESTINASI</button>
+            <button class="btn-main" onclick="showSection('budaya')">BUDAYA</button>
+            <button class="btn-main" onclick="showSection('makanan')">MAKANAN</button>
+        </div>
+    </header>
+
+    <section id="destinasi" class="content-section">
+        <h2 class="section-title">DESTINASI WISATA</h2>
+        <div class="grid">
+            <div class="card"><img src="KAWAH IJEN.jpeg"> <div class="card-content"><h3>Kawah Ijen</h3><p>Destinasi ikonik dengan fenomena blue fire yang langka. Keindahan kawah belerang berpadu panorama pegunungan.</p></div></div>
+            <div class="card"><img src="LEGOMORO.jpeg"> <div class="card-content"><h3>Legomoro</h3><p>Air terjun kembar di tengah hutan pinus yang asri. Memberikan ketenangan bagi setiap pengunjung.</p></div></div>
+            <div class="card"><img src="PULAU MERAH.jpeg"> <div class="card-content"><h3>Pulau Merah</h3><p>Terkenal dengan bukit 200 meter di bibir pantai dan sunset yang sangat memukau.</p></div></div>
+            <div class="card"><img src="BALURAN.jpeg"> <div class="card-content"><h3>TN Baluran</h3><p>"Africa van Java" dengan sabana luas, hutan kering, dan pantai yang indah.</p></div></div>
+            <div class="card"><img src="ALAS PURWO.jpeg"> <div class="card-content"><h3>Savana Sadengan</h3><p>Padang rumput alami di Alas Purwo dengan satwa liar yang bebas berkeliaran.</p></div></div>
+            <div class="card"><img src="TABUHAN.jpeg"> <div class="card-content"><h3>Pulau Tabuhan</h3><p>Pulau mungil tak berpenghuni dengan pasir putih dan spot terbaik untuk snorkeling.</p></div></div>
+            <div class="card"><img src="DJAWATAN.jpeg"> <div class="card-content"><h3>De Djawatan</h3><p>Hutan trembesi raksasa rimbun yang menciptakan atmosfer magis nan dramatis.</p></div></div>
+            <div class="card"><img src="BANGSRING.jpeg"> <div class="card-content"><h3>Bangsring Underwater</h3><p>Wisata konservasi. Sensasi berenang bersama hiu jinak di rumah apung tengah laut.</p></div></div>
+            <div class="card"><img src="TELUK IJO.jpeg"> <div class="card-content"><h3>Teluk Hijau</h3><p>Permata tersembunyi dengan air laut hijau jernih dikelilingi tebing tinggi.</p></div></div>
+            <div class="card"><img src="KEMIREN.jpeg"> <div class="card-content"><h3>Desa Kemiren</h3><p>Mengenal filosofi hidup Suku Osing, arsitektur rumah adat, dan ritual kopi.</p></div></div>
+            <div class="card"><img src="BOOM.jpeg"> <div class="card-content"><h3>Pantai Boom Marina</h3><p>Marina modern elegan, tempat terbaik melihat kapal pesiar dan jembatan spiral.</p></div></div>
+            <div class="card"><img src="GWD.jpeg"> <div class="card-content"><h3>Pantai Watu Dodol</h3><p>Gerbang masuk Banyuwangi dengan view Selat Bali dan patung Gandrung yang ikonik.</p></div></div>
+        </div>
+        <button class="back-btn" onclick="goBack()">Kembali ke Menu</button>
+    </section>
+
+    <section id="budaya" class="content-section">
+        <h2 class="section-title">BUDAYA & TRADISI</h2>
+        <div class="grid">
+            <div class="card"><img src="GANDRUNG.jpeg"> <div class="card-content"><h3>Gandrung Sewu</h3><p>Pertunjukan tari kolosal seribu penari di atas pasir pantai yang menggetarkan jiwa.</p></div></div>
+            <div class="card"><img src="BEC.jpeg"> <div class="card-content"><h3>BEC</h3><p>Parade busana modern berskala internasional yang berakar kuat pada kearifan lokal.</p></div></div>
+            <div class="card"><img src="SEBLANG.jpeg"> <div class="card-content"><h3>Seblang</h3><p>Ritual tari magis dalam kondisi tidak sadar sebagai permohonan keselamatan desa.</p></div></div>
+            <div class="card"><img src="JARANAN.jpeg"> <div class="card-content"><h3>Jaranan Buto</h3><p>Tarian ekspresif menggambarkan sosok raksasa dengan riasan wajah mencolok.</p></div></div>
+            <div class="card"><img src="KEBO.jpeg"> <div class="card-content"><h3>Kebo-Keboan</h3><p>Simbol penghormatan kepada alam demi hasil panen melimpah dengan warga berdandan kerbau.</p></div></div>
+            <div class="card"><img src="TUMPENG.jpeg"> <div class="card-content"><h3>Tumpeng Sewu</h3><p>Tradisi makan bersama ribuan tumpeng sebagai wujud rasa syukur kolektif suku Osing.</p></div></div>
+            <div class="card"><img src="BARONG.jpeg"> <div class="card-content"><h3>Barong Ider Bumi</h3><p>Ritual bersih desa pada hari raya kedua Idul Fitri untuk menolak bala.</p></div></div>
+            <div class="card"><img src="PETIK.jpeg"> <div class="card-content"><h3>Petik Laut</h3><p>Upacara larung sesaji ke samudera sebagai bentuk syukur masyarakat nelayan.</p></div></div>
+        </div>
+        <button class="back-btn" onclick="goBack()">Kembali ke Menu</button>
+    </section>
+
+    <section id="makanan" class="content-section">
+        <h2 class="section-title">KULINER KHAS</h2>
+        <div class="grid">
+            <div class="card"><img src="TEMPONG.jpeg"> <div class="card-content"><h3>Sego Tempong</h3><p>Nasi legenda dengan sambal tomat mentah pedas yang seolah "menampar" lidah.</p></div></div>
+            <div class="card"><img src="SOTO.jpeg"> <div class="card-content"><h3>Rujak Soto</h3><p>Fusion unik bumbu kacang rujak cingur dengan gurihnya kuah soto babat.</p></div></div>
+            <div class="card"><img src="KESRUT.jpeg"> <div class="card-content"><h3>Ayam Kesrut</h3><p>Sup ayam kampung khas Osing dengan kuah asam segar dari belimbing wuluh.</p></div></div>
+            <div class="card"><img src="PECEL.jpeg"> <div class="card-content"><h3>Pecel Pitik</h3><p>Ayam bakar suwir dicampur parutan kelapa berbumbu rempah, hidangan wajib adat.</p></div></div>
+            <div class="card"><img src="PINDANG.jpeg"> <div class="card-content"><h3>Pindang Koyong</h3><p>Olahan ikan laut segar kuah kuning dengan rasa asam-pedas khas pesisir.</p></div></div>
+        </div>
+        <button class="back-btn" onclick="goBack()">Kembali ke Menu</button>
+    </section>
+
+    <script>
+        function showSection(id) {
+            document.getElementById('mainPage').style.display = 'none';
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function goBack() {
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById('mainPage').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
